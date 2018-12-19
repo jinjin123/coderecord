@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>运维平台系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bluth Company">
+    <link rel="shortcut icon" href="static/ico/favicon.html">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/theme.css" rel="stylesheet">
+    <link href="static/css/anniu.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+ <!--   <link href="http://fonts.useso.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="wrap">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+         <!--  <div class="logo">
+            <img src="static/img/logo.png" alt="Realm Admin Template">
+          </div> -->
+           <a class="btn btn-navbar visible-phone" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           <a class="btn btn-navbar slide_menu_left visible-tablet">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <div class="top-menu visible-desktop">
+		<ul class="pull-left">
+ 	             <li><a  data-notification="0" href="#"> 欢迎使用运维平台 </a></li>
+		</ul>
+            <ul class="pull-right">  
+              <li><a href="login.html"><i class="icon-off"></i> 退出</a></li>
+            </ul>
+          </div>
+
+          <!--<div class="top-menu visible-phone visible-tablet">
+            <ul class="pull-right">  
+              <li><a title="link to View all Messages page, no popover in phone view or tablet" href="#"><i class="icon-envelope"></i></a></li>
+              <li><a title="link to View all Notifications page, no popover in phone view or tablet" href="#"><i class="icon-globe"></i></a></li>
+              <li><a href="login.html"><i class="icon-off"></i></a></li>
+            </ul>
+          </div>-->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <!-- Side menu -->  
+      <div class="sidebar-nav nav-collapse collapse">
+        <div class="user_side clearfix">
+          <img src="static/img/odinn.jpg" alt="Odinn god of Thunder">
+          <h5>Admin</h5>
+          <!--<a href="#"><i class="icon-cog"></i> 设置</a>        -->
+        </div>
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_F79999" href="/home"><i class="icon-dashboard"></i> <span>Dashboard</span></a>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_C3F7A7 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse1"><i class="icon-magic"></i> <span>模块管理</span></a>
+            </div>
+            <div id="collapse1" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <a class="accordion-toggle" href="/service_fly"><i class="icon-star"></i>  环境部署</a>
+                <!--<a class="accordion-toggle" href="forms.html"><i class="icon-list-alt"></i> 测试环境部署</a>
+                <a class="accordion-toggle" href="tables.html"><i class="icon-table"></i> 生产环境部署</a>-->
+<!--                 <a class="accordion-toggle" href="buttons.html"><i class="icon-circle"></i> Buttons</a>
+ -->              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_9FDDF6 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"><i class="icon-reorder"></i> <span>资产管理</span></a>
+            </div>
+            <div id="collapse2" class="accordion-body collapse">
+              <div class="accordion-inner">
+		<a class="accordion-toggle" href="/host_list"><i class="icon-picture"></i> 资产信息</a>
+                <a class="accordion-toggle active" href="/host_cmd"><i class="icon-rss"></i>批量命令</a>
+                <a class="accordion-toggle" href="/host_add"><i class="icon-calendar"></i> 批量授权</a>
+               </div>
+            </div>
+          </div>
+	  <div class="accordion-group">
+            <div class="accordion-heading">
+               <a class="accordion-toggle b_C3F7A7 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse3"><i class="icon-resize-vertical"></i> <span>上传下载</span></a>
+            </div>
+            <div id="collapse3" class="accordion-body collapse " style="">
+              <div class="accordion-inner">
+                <a class="accordion-toggle" href="/file_up"><i class="icon-upload"></i> 文件上传</a>
+                <a class="accordion-toggle" href="#"><i class="icon-download"></i> 文件下载</a>
+               </div>
+            </div>
+          </div>
+   <!--        <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_F6F1A2" href="tasks.html"><i class="icon-tasks"></i> <span>Tasks</span></a>
+            </div>
+          </div> -->
+          <!--<div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_9FDDF6" href="/resource"><i class="icon-bullhorn"></i> <span>线上发布</span></a>
+            </div>
+          </div> -->
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_9FDDF6" href="/monitor"><i class="icon-bar-chart"></i> <span>平台监控</span></a>
+            </div>
+          </div> 
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_F5C294" href="/users"><i class="icon-user"></i> <span>用户管理</span></a>
+            </div>
+          </div>      
+        </div>
+      </div>
+      <!-- /Side menu -->
+
+      <!-- Main window -->  
+      <div class="main_container" id="analytics_page">
+          <div class="row-fluid">
+            <div class="widget-top widget widget-padding">
+              <div class="widget-header">
+              <div class="widget-buttons">
+                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
+              </div>
+              </div>
+              <!--<div class="widget-body" style="background:url(../static/img/aimiliya.png) repeat  center bottom;"> -->
+              <div class="widget-body" style="background:url(../static/img/daiti.jpg) repeat  center bottom;"> 
+              <!--<div class="widget-body" style="">-->
+		<h5  style="text-align:center" class=" btn-danger " >环境部署</h5> 
+		<hr></hr>
+		<form id="service" action="/service_fly" method="post"  >
+			<input id="ip" name="ip" type="text" value="请选择主机" class="textarea" onfocus="if(value =='请选择主机'){value=''}"onblur="if(value==''){value='请选择主机'}"/>
+			 <div class="form-group">
+                            <label class="btn-danger control-label">安装模块</label><!--确保checkbox value有值否则提取的是on-->
+				<div class="controls">
+					<!--<div style="float:left;padding:0 15px;"><input sytle="margin-botton:25px;" id='check-1' type="checkbox" name='' checked='checked' /><label for="check-1">A</label></div>-->
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='nginx' type="checkbox" name='nginx' value="nginx" />
+    					<label style="color:black;font-weight:bold;" for="nginx">Nginx</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='php' type="checkbox" name='php' value="php" />
+    					<label style="color:black;font-weight:bold;" for="php">PHP</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='mysql' type="checkbox" name='mysql' value="mysql" />
+    					<label style="color:black;font-weight:bold;"for="mysql">MySQL</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='redis' type="checkbox" name='redis' value="redis" />
+    					<label style="color:black;font-weight:bold;"for="redis">Redis</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='memcached' type="checkbox" name='memcached' value="memcached" />
+    					<label style="color:black;font-weight:bold;"for="memcached">Memcached</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='zabbix' type="checkbox" name='zabbix' value="zabbix" />
+    					<label style="color:black;font-weight:bold;"for="zabbix">Zabbix</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='log' type="checkbox" name='log' value="log" />
+    					<label style="color:green;font-weight:bold;"for="log">日志采集</label> </div>
+					<div style="float:left;padding:0 12px;"><input style="margin-bottom:5px;" id='init' type="checkbox" name='init' value="init" />
+    					<label style="color:black;font-weight:bold;" for="init">初始化</label> </div>
+				</div>
+                        </div><!-- padding 框与框的间距-->
+			<button style="float:right" class="btn btn-success btn-srm " type="submit" onclick="return check1();"  >开始部署</button>
+		</form><!--页面无刷针对需要快速返回值的事件才需要的 返回大批量数据不要用无刷-->
+                <div id="" class="" style="height:200px; width:200px; background-color:; border-radius:100px;"></div>
+                            <label class="btn-danger control-label">CallBack</label>
+		<textarea style="margin:0 auto;" class="textarea" rows="20" >{{result}}</textarea>
+              </div>
+            </div>
+          </div>
+      
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/raphael-min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+    <script type="text/javascript" src='static/js/sparkline.js'></script>
+    <script type="text/javascript" src='static/js/morris.min.js'></script>
+    <script type="text/javascript" src="static/js/jquery.dataTables.min.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.masonry.min.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.imagesloaded.min.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.facybox.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.alertify.min.js"></script> 
+    <script type="text/javascript" src="static/js/jquery.knob.js"></script>
+    <script type='text/javascript' src='static/js/fullcalendar.min.js'></script>
+    <script type="text/javascript" src="static/js/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="static/js/realm.js"></script>
+    <script type="text/javascript">
+            function check1() {
+		var ip = document.getElementById("ip").value;
+		if(ip == "请选择主机")
+		{
+			alert("请选择主机");
+			return false;
+		}
+   	}  
+    </script>
+    <script type="text/javascript">
+            function check() {
+		var ip = document.getElementById("ip").value;
+     		var formData = new FormData($( "#service" )[0]);  
+		if(ip == "请选择主机")
+		{
+			alert("请选择主机");
+			return false;
+		}else{
+			$.ajax({  
+			url: '/service_fly' ,  
+          		type: 'POST',  
+          		data: formData,
+          		async: true,  
+          		cache: false,  
+          		contentType: false,  
+          		processData: false,  
+          		success:function (data,status) {  
+              		 if(data == "0"){
+               			alert("正在部署...")
+                 		}
+          		},
+          		error: function (returndata) {  
+              			alert("部署失败");  
+          		}  
+		 });  
+		}
+   	}  
+    </script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+.file {
+    position: relative;
+    display: inline-block;
+    background:#D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align:left;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+.textarea {
+display: block;
+width: 58%;
+font-size: 14px;
+line-height:1.42587133;
+height: auto;
+overflow:auto;
+#background:#A9A9A9;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    background: #66CDAA;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #8B0000;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align:left;
+}
+
+.textarea {
+display: block;
+width: 58%;
+font-size: 14px;
+line-height:1.42587133;
+height: auto;
+overflow:auto;
+#background:#A9A9A9;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    background: #66CDAA;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #8B0000;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align:left;
+}
+
+.textarea {
+display: block;
+width: 58%;
+font-size: 14px;
+line-height:1.42587133;
+height: auto;
+overflow:auto;
+#background:#A9A9A9;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    #background: #66CDAA;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    #overflow: hidden;
+    color: #8B0000;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align:left;
+}
+.list li{
+list-style-type:none;
+margin:10px 10px 10px 10px;
+font-weight:bold;
+left:300px; /* 这里规定输入框于原位置向右偏移300px */
+}
+
+.upload {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align:left;
+}
+.kongbai {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align:left;
+}
+div.controls{
+  margin-bottom:12px;
+  border: 1px dotted $whiteLight;
+  padding:2px 2px;
+  position:relative;
+  margin-bottom:20px;
+}
+input[type='checkbox']{
+   & + label:before{
+     @include border-radius(3px); 
+  }
+  
+  & + label:hover:after,
+  &:checked + label:after{
+    content:"\2713";
+    line-height:18px;
+    font-size:12px;
+  }
+  & + label:hover:after{
+    color:darken($whiteLight, 20%);  
+  }
+  &:checked + label:after,
+  &:checked + label:hover:after{
+    #color:#fff;
+  }
+}

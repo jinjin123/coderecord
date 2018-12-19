@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>运维平台</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+ <!--      <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>-->
+        <link rel="stylesheet" href="static/css/reset.css">
+        <link rel="stylesheet" href="static/css/supersized.css">
+        <link rel="stylesheet" href="static/css/style.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+	<style>
+	.DocSite-footer {
+    	         width: 100%;
+   		 text-align: center;
+  	         margin-top: 25px;
+                 margin-bottom: 40px;
+		}
+   	</style>
+    </head>
+    <body>
+
+        <div class="page-container" >
+		<form id="reset" >
+                <h1>查询KC</h1>
+                <input id="username" type="text" name="username" class="username" placeholder="请输入您的用户名"> 
+                <input id="password" type="password" name="password" class="password" placeholder="请输入您的密码">
+                <button id="foo" type="button" >登录</button>
+		</form>
+        </div>
+	<div class="DocSite-footer">
+	   	©    kim
+	</div>
+        <!-- Javascript -->
+         <script src="static/js/jquery-1.8.2.min.js"></script>
+         <script src="static/js/supersized.3.2.7.min.js"></script>
+         <script src="static/js/supersized-init.js"></script> <!-- 控制背景图片轮转-->
+         <script src="static/js/scripts.js"></script>
+	 <script>
+		document.onkeydown = function (e) { 
+		var theEvent = window.event || e; 
+		var code = theEvent.keyCode || theEvent.which; 
+		if (code == 13) { 
+			$("#foo").click(); 
+			} 
+		}  
+	 </script>
+	 <script>
+		$("#foo").click(function(){
+			var username = $("#username").val();
+			var password = $("#password").val();
+			  if(document.getElementById("username").value==""){
+                                alert("请输入用户名!");
+                                return false;
+                        }
+                        if(document.getElementById("password").value==""){
+                                alert("请输入密码!");
+                                return false;
+                        }
+			$.post("/login",{username:username,password:password},function(data){
+				if(data == "2"){
+					alert('用户不存在')
+					window.location.href='/login';
+					return false;
+				}
+				if(data == "1"){
+					alert('密码错误')
+					window.location.href='/login';
+					return false;
+				}else{
+					alert('登录成功')
+					window.location.href='/home';
+					return true;
+				}
+			});
+		});
+	</script>
+	<script>
+		document.getElementById("reset").reset();
+	</script>
+    </body>
+</html>
+

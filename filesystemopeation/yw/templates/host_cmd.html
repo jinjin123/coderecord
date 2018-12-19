@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>运维平台系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bluth Company">
+    <link rel="shortcut icon" href="static/ico/favicon.html">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/theme.css" rel="stylesheet">
+    <link href="static/css/anniu.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+    <script type="text/javascript" src="static/js/angular.min.js"></script>
+ <!--   <link href="http://fonts.useso.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<style>
+        .list li{list-style-type:none;margin:0;padding:0;text-align:centen;}
+	.se{
+	       display: inline-block;
+		text-align: left;
+	         margin-right: 3%;
+	}
+	.list1 li{list-style-type:none;display:inline;}
+	.input-append, .input-prepend {
+    	display: inline-block;
+	}
+      </style>
+  </head>
+  <body>
+    <div id="wrap">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+         <!--  <div class="logo">
+            <img src="static/img/logo.png" alt="Realm Admin Template">
+          </div> -->
+           <a class="btn btn-navbar visible-phone" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           <a class="btn btn-navbar slide_menu_left visible-tablet">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <div class="top-menu visible-desktop">
+		<ul class="pull-left">
+ 	             <li><a  data-notification="0" href="#"> 欢迎使用 </a></li>
+		</ul>
+            <ul class="pull-right">  
+              <li><a href="login.html"><i class="icon-off"></i> 退出</a></li>
+            </ul>
+          </div>
+
+          <!--<div class="top-menu visible-phone visible-tablet">
+            <ul class="pull-right">  
+              <li><a title="link to View all Messages page, no popover in phone view or tablet" href="#"><i class="icon-envelope"></i></a></li>
+              <li><a title="link to View all Notifications page, no popover in phone view or tablet" href="#"><i class="icon-globe"></i></a></li>
+              <li><a href="login.html"><i class="icon-off"></i></a></li>
+            </ul>
+          </div>做消息订阅通知-->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <!-- Side menu -->  
+      <div class="sidebar-nav nav-collapse collapse">
+        <div class="user_side clearfix">
+          <img src="static/img/odinn.jpg" alt="Odinn god of Thunder">
+          <h5>Admin</h5>
+        </div>
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_F79999" href="/home"><i class="icon-dashboard"></i> <span>Dashboard</span></a>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_9FDDF6 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"><i class="icon-reorder"></i> <span>修改标识</span></a>
+            </div>
+            <div id="collapse2" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <a class="accordion-toggle active" href="/host_cmd"><i class="icon-rss"></i>修改标识</a>
+               </div>
+            </div>
+           <div class="accordion-group"> <div class="accordion-heading"> <a class="accordion-toggle b_C3F7A7 collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse3"><i class="icon-reorder"></i> <span>主机管理</span></a>
+            </div>
+            <div id="collapse3" class="accordion-body  collapse" style="">
+              <div class="accordion-inner">
+                <a class="accordion-toggle active" href="/host_list"><i class="icon-rss"></i> 主机管理</a>
+               </div>
+            </div>
+          </div>
+          </div>      
+        </div>
+      </div>
+
+	 <div class="main_container" id="analytics_page">
+          <div class="row-fluid">
+            <div class="widget-top widget widget-padding">
+              <div class="widget-header">
+              <div class="widget-buttons">
+                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
+              </div>
+              </div>
+              <div class="widget-body">
+                <form action="/host_cmd" method="post"  id="">
+			<!--<div class="input-append">
+				<select name="mendian" id=" class="">
+    					<option value="中信店">中信店</option>
+					<option value="体育西">体育西</option>
+  				</select>
+			</div>-->
+                        <div class="input-append">
+                                <input type="text"  name="host" id="host" value="" >
+                                <button id="" type="submit" class="btn  btn-danger btn-srm" onclick=""  >查询标识</button>
+                        </div>
+                        <div class="modal-header">
+                            <div class="modal-body">
+                                <table id="" class="table table-striped table-bordered dataTable">
+                                       <thread>
+                                        <tr>
+                                                <th>id</th>
+                                                <th>port</th>
+                                                <th>主机标识</th>
+                                                <th>操作</th>
+                                        </tr>
+                                        </thread>
+					{%for filed in dataselect%}
+                                        <tr>
+                                               	<td>{{filed[u'_id']}}</td>
+                                               	<td>{{'%d' % filed[u'port']}}</td>
+                                               	<td>{{filed[u'store_id']}}</td>
+						<td>
+                     					<div class="btn-group">
+                        				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                       					 编辑
+                          				<span class="caret"></span>
+                        				</a>
+                          				<ul class="dropdown-menu pull-right list1 ">
+                                        		<li><button id="" type="button" value="{{ '%d' % filed[u'port']}}" onclick="Delete(this)"><i class="icon-trash"></i>删除</button></li>
+                                        		<li><button onclick="Update(this)" type="button" value="{{'%d' % filed[u'port']}}" ><i class="icon-edit"></i>修改标识</button></li>
+                        				</ul>
+                    				  </div>
+						</td>
+                                        </tr>
+					{%end%}
+ 			     </div>
+			</div>
+		</form>
+                <div id="" class="" style="height:50px; width:200px; background-color:white; border-radius:100px;"></div>
+              </div>
+            </div>
+          </div>
+      
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/raphael-min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+    <script type="text/javascript" src='static/js/sparkline.js'></script>
+    <script type="text/javascript" src='static/js/morris.min.js'></script>
+    <script type="text/javascript" src="static/js/jquery.dataTables.min.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.masonry.min.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.imagesloaded.min.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.facybox.js"></script>   
+    <script type="text/javascript" src="static/js/jquery.alertify.min.js"></script> 
+    <script type="text/javascript" src="static/js/jquery.knob.js"></script>
+    <script type='text/javascript' src='static/js/fullcalendar.min.js'></script>
+    <script type="text/javascript" src="static/js/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="static/js/realm.js"></script>
+    <script type="text/javascript">
+        function Delete(event){
+                var value = event.value
+                  if (!confirm("确认要删除该记录吗?")) { 
+                        window.event.returnValue = false; 
+                 } 
+                $.ajax({
+                        type: "POST",
+                        url: "/host_del",
+                        data: {port: value},
+                }).done(function(data,status,jqXHR){
+                        if(jqXHR.status == 200){
+                                if(data.status == 1){
+                                        alert("删除成功");
+                                }
+                                        alert("删除成功");
+                        }
+                }).fail(function(){
+                        alert("删除失败")
+                }).always(function(){
+                        location.href="/host_cmd";
+                })
+        }
+   </script>
+   <script type="text/javascript">
+        function Update(event){
+         var value = event.value
+         var str = prompt("新标识","");
+          $.ajax({ 
+                type: "POST",
+                url: "/update",
+                data:{port: value,store: str}
+            }).done(function(data,status,jqXHR){
+                     if(jqXHR.status == 200){
+                            if(data.status == 1){
+                                      alert("修改成功")
+                                }
+                                      alert("修改成功")
+                        }
+                }).fail(function(){
+                        alert("修改失败")
+                }).always(function(){
+                        location.href="/host_cmd";
+                })
+        }
+   </script>
+  </body>
+</html>

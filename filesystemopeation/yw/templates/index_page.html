@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Server列表 - Server Monitor</title>
+    <link rel="stylesheet" type="text/css" href="/static/res/css/style1.css" />
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/theme.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/alertify.css" rel="stylesheet">
+    <link rel="Favicon Icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="Keywords" content="Server monitor,python web, flask redis, flask http" />
+    <meta name="Description" content="Redis Monitor: a python flask server monitor project, include redis and http server." />
+    <link rel="shortcut icon" href="/static/res/favicon.ico"/>
+    <link rel="bookmark" href="/static/res/favicon.ico"/>
+</head>
+<body>
+    <div id="wrap">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+       <!--    <div class="logo">
+            <img src="static/img/logo.png" alt="Realm Admin Template">
+          </div> -->
+           <a class="btn btn-navbar visible-phone" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           <a class="btn btn-navbar slide_menu_left visible-tablet">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <div class="top-menu visible-desktop">
+             <ul class="pull-left">
+              <li><a  data-notification="0" href="#"> 欢迎使用运维平台 </a></li>
+             <!-- <li><a id="messages" data-notification="2" href="#"><i class="icon-envelope"></i> Messages</a></li>
+              <li><a id="notifications" data-notification="3" href="#"><i class="icon-globe"></i> Notifications</a></li> -->
+            </ul>
+            <ul class="pull-right">
+              <li><a href="/login"><i class="icon-off"></i> 退出</a></li>
+            </ul>
+          </div>
+          <div class="top-menu visible-phone visible-tablet">
+            <ul class="pull-right">
+		<li><a href="/login"><i class="icon-off"></i></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <!-- Side menu -->
+      <div class="sidebar-nav nav-collapse collapse">
+        <div class="user_side clearfix">
+          <img src="static/img/odinn.jpg" alt="Odinn god of Thunder">
+          <h5>Admin</h5>
+          <!--<a href="#"><i class="icon-cog"></i> 设置</a>        -->
+        </div>
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_F79999" href="/home"><i class="icon-dashboard"></i> <span>Dashboard</span></a>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_C3F7A7 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse1"><i class="icon-magic"></i> <span>模块管理</span></a>
+            </div>
+            <div id="collapse1" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <a class="accordion-toggle" href="/service_fly"><i class="icon-star"></i>  环境部署</a>
+<!--                 <a class="accordion-toggle" href="buttons.html"><i class="icon-circle"></i> Buttons</a>
+ -->              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+           <a class="accordion-toggle b_9FDDF6 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"><i class="icon-reorder"></i> <span>资产管理</span></a>
+            </div>
+            <div id="collapse2" class="accordion-body  collapse" style="">
+              <div class="accordion-inner">
+                      <a class="accordion-toggle" href="/host_list"><i class="icon-picture"></i> 资产信息</a>
+                      <a class="accordion-toggle active" href="/host_cmd"><i class="icon-rss"></i>批量命令</a>
+                       <a class="accordion-toggle" href="/host_add"><i class="icon-calendar"></i> 批量授权</a>
+               </div>
+            </div>
+          </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+               <a class="accordion-toggle b_C3F7A7 collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse3"><i class="icon-resize-vertical"></i> <span>上传下载</span></a>
+            </div>
+            <div id="collapse3" class="accordion-body collapse " style="">
+              <div class="accordion-inner">
+                <a class="accordion-toggle" href="/file_up"><i class="icon-upload"></i> 文件上传</a>
+                <a class="accordion-toggle" href="/file_dw"><i class="icon-download"></i> 文件下载</a>
+              	<a class="accordion-toggle b_F6F1A2" href="/monitor"><i class="icon-bar-chart"></i> 平台监控</a>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              	  <div class="accordion-inner">
+              	   	<a class="accordion-toggle b_F6F1A2" href="/monitor"><i class="icon-bar-chart"></i> 平台监控</a>
+		  </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle b_F5C294 active" href="/users"><i class="icon-user"></i> <span>用户管理</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div id="wrapper">
+        <p class="breadcrumb">
+            <a href="/home"><HEAD></HEAD>Home</a> &gt; Server List
+        </p>
+        <!--<div class="bdsharebuttonbox" style="float:right;">
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+            <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            <a class="bds_count" data-cmd="count"></a>
+        </div>-->
+        <h1>监控Server列表 - Server Monitor Informations </h1>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7292810486004926"
+             data-ad-slot="9220497478"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <form>
+        	<strong>Redis |</strong>
+                Host: <input type="text" placeholder="redis IP 地址" id="new_host" />&nbsp;&nbsp;
+        	Port: <input type="number" placeholder="6379" id="new_port" />&nbsp;&nbsp;
+        	Password: <input type="text" placeholder="" id="new_password" />&nbsp;&nbsp;
+        	Email: <input type="text" placeholder="报警提醒" id="new_email" />&nbsp;&nbsp;
+        	<input type="button" onclick="add_redis_btn_click()" value="添加/更新" />&nbsp;
+        	<input type="button" onclick="add_demo_redis_btn_click()" value="来个示例" />
+        </form>
+        <hr />
+        <form>
+            <strong>Http |</strong>
+            Url: <input type="text" placeholder="url 地址" id="new_http_url" />&nbsp;&nbsp;
+            Email: <input type="text" placeholder="报警提醒" id="new_http_email" />&nbsp;&nbsp;
+            <input type="button" onclick="add_http_btn_click()" value="添加/更新" />&nbsp;
+            <input type="button" onclick="add_demo_http_btn_click()" value="来个示例" />
+        </form>
+        <table id="server_table" width="100%" border="1" cellpadding="10" cellspacing="1" bgcolor="#CCCCCC" style="margin:1em 0;">
+            <tbody>
+                <tr>
+                    <th width="10%" bgcolor="#DDEEFF">类型</th>
+                    <th width="50%" bgcolor="#DDEEFF">Server Information</th>
+                    <th width="20%" bgcolor="#DDEEFF">添加时间</th>
+                    <th width="20%" bgcolor="#DDEEFF">操作</th>
+                </tr>
+            </tbody>
+        </table>
+        <p class="footer">
+            <a href="/home">Server Monitor</a>  
+        </p>
+    </div>
+    <script type="text/javascript" src="/static/res/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/res/js/common.js"></script>
+    <script type="text/javascript" src="/static/res/lib/md5.js"></script>
+    <script type="text/javascript" src="/static/res/lib/simpleStorage.js"></script>
+    <script type="text/javascript" src="/static/res/js/index.js"></script>
+    <script type="text/javascript">
+    window._bd_share_config={"common":{"bdSnsKey":{"tsina":"2337303479","tqq":"801368329"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</body>
+</html>
