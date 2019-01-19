@@ -1,0 +1,21 @@
+2016-11-11 01:44:29 4912 [Note] Plugin 'FEDERATED' is disabled.
+2016-11-11 01:44:29 4912 [Note] InnoDB: Using atomics to ref count buffer pool pages
+2016-11-11 01:44:29 4912 [Note] InnoDB: The InnoDB memory heap is disabled
+2016-11-11 01:44:29 4912 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2016-11-11 01:44:29 4912 [Note] InnoDB: Memory barrier is not used
+2016-11-11 01:44:29 4912 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2016-11-11 01:44:29 4912 [Note] InnoDB: Not using CPU crc32 instructions
+2016-11-11 01:44:29 4912 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2016-11-11 01:44:29 4912 [Note] InnoDB: Completed initialization of buffer pool
+2016-11-11 01:44:30 4912 [Note] InnoDB: Highest supported file format is Barracuda.
+2016-11-11 01:44:30 4912 [Note] InnoDB: 128 rollback segment(s) are active.
+2016-11-11 01:44:30 4912 [Note] InnoDB: Waiting for purge to start
+2016-11-11 01:44:30 4912 [Note] InnoDB: 5.6.22 started; log sequence number 1625977
+2016-11-11 01:44:30 4912 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 5515e830-a76d-11e6-969f-000c29e0f536.
+2016-11-11 01:44:30 4912 [Note] Server hostname (bind-address): '*'; port: 3306
+2016-11-11 01:44:30 4912 [Note] IPv6 is available.
+2016-11-11 01:44:30 4912 [Note]   - '::' resolves to '::';
+2016-11-11 01:44:30 4912 [Note] Server socket created on IP: '::'.
+2016-11-11 01:44:31 4912 [Note] Event Scheduler: Loaded 0 events
+2016-11-11 01:44:31 4912 [Note] mysqld.exe: ready for connections.
+Version: '5.6.22'  socket: ''  port: 3306  MySQL Community Server (GPL)
