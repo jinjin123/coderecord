@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/python /usr/local/proxy/printer/printer.py
+/usr/bin/python /usr/local/proxy/printer/printer.py > /dev/stdout
